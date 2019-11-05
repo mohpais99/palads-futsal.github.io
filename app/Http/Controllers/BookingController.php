@@ -108,7 +108,14 @@ class BookingController extends Controller
                 $booking->save();
     
                 $request->request->add(['booking_id' => $booking->id]);
-                    $harga = ($request->lama_bermain/3600)*70000;
+                    if (Auth()->user()->member === '1') {
+                        $harga_awal = ($request->lama_bermain/3600)*70000;
+                        $harga_discon = ($harga_awal/100)*15;
+                        $harga = $harga_awal-$harga_discon;
+                    } else {
+                        $harga = ($request->lama_bermain/3600)*70000;
+                    };
+                    
                     $end_payment = date("H:i", strtotime($request->waktu_mulai) - 1200);
                     $pay = new Payment;
                     $pay->booking_id = $request->booking_id;
