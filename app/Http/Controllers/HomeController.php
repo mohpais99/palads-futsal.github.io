@@ -46,12 +46,11 @@ class HomeController extends Controller
         return view('galeri')->with('gallery', $gallery);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+    public function member()
+    {
+        return view('member');
+    }
+
     public function payment()
     {
         if(!empty(Auth()->user()->booking)) {

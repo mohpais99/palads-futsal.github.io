@@ -62,6 +62,7 @@ Route::post('/message', 'HomeController@messageStore');
 
 
 Route::group(['middleware' => ['auth', 'checkRole:user']], function () {
+    Route::get('/member', 'HomeController@member');
     Route::get('/booking', 'BookingController@index');
     Route::post('/booking/store', 'BookingController@store');
     Route::get('/payment', 'HomeController@payment');
@@ -70,6 +71,5 @@ Route::group(['middleware' => ['auth', 'checkRole:user']], function () {
     Route::get('/history', 'HomeController@history');
     Route::get('/history/{id}/update', 'HomeController@historyUpdate');
     Route::get('/history/{id}/delete', 'HomeController@historyDelete');
-
 });
 
