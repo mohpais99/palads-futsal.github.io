@@ -4,17 +4,10 @@
     <div class="card mb-4 wow fadeIn">
         <div class="card-body d-sm-flex justify-content-between">
             <h4 class="mb-2 mb-sm-0 pt-1">
-                <a href="#" >Dashboard</a>
+                <a href="/admin" >Dashboard</a>
                 <span>/</span>
-                <span>User</span>
+                <span>Message</span>
             </h4>
-
-            <form action="/find-user" class="d-flex justify-content-center" method="GET">
-                <input type="search" placeholder="Cari nama user ..." name="search" class="form-control">
-                <button class="btn btn-primary btn-sm my-0 p" type="submit">
-                    <i class="fas fa-search"></i>
-                </button>
-            </form>
         </div>
     </div>
 
@@ -26,9 +19,10 @@
                         <thead class=" blue lighten-1">
                             <tr>
                                 <th class="th-sm">No</th>
-                                <th class="th-sm">Nama Lengkap</th>
+                                <th class="th-sm">Nama Pengirim</th>
                                 <th class="th-sm">Email</th>
-                                <th class="th-sm">Status Member</th>
+                                <th class="th-sm">Subjek</th>
+                                <th class="th-sm">message</th>
                                 <th class="th-sm"></th>
                             </tr>
                         </thead>
@@ -36,20 +30,14 @@
                             @php
                                 $no = 1;
                             @endphp
-                            @foreach ($user as $item)    
+                            @foreach ($message as $item)    
                                 <tr>
                                     <td>{{$no++}}</td>
                                     <td>{{$item->name}}</td>
                                     <td>{{$item->email}}</td>
+                                    <td>{{$item->subject}}</td>
+                                    <td>{{$item->message}}</td>
                                     <td>
-                                        @if ($item->member === '0')
-                                            non member
-                                        @else
-                                            member
-                                        @endif
-                                    </td>
-                                    <td>
-                                        <a class="btn btn-warning btn-sm" href="/user-detail/{{$item->id}}"><i class="far fa-eye"></i></a>
                                         <a id="catchId" dataId="{{$item->id}}" class="btn btn-danger btn-sm">
                                             <i class="fas fa-trash-alt"></i>
                                         </a>
@@ -62,7 +50,7 @@
                 <div class="card-body d-flex justify-content-center">
                     <nav aria-label="Page navigation example">
                         <ul class="pagination pg-blue">
-                            {{ $user->links() }}
+                            {{ $message->links() }}
                         </ul>
                     </nav>
                 </div>
@@ -78,14 +66,14 @@
             var id = $(this).attr('dataId');
             swal({
                 title: "Are you sure?",
-                text: "Once deleted, you will not be able to recover this data user with ID "+id+"??",
+                text: "Once deleted, you will not be able to recover this data message with ID "+id+"??",
                 icon: "warning",
                 buttons: true,
                 dangerMode: true,
             })
             .then((willDelete) => {
                 if (willDelete) {
-                    window.location = "/user/"+id+"/delete"
+                    window.location = "/message/"+id+"/delete"
                 } else {
                     swal("Deleted data canceled!!");
                 }

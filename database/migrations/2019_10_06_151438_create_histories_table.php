@@ -30,7 +30,6 @@ class CreateHistoriesTable extends Migration
             $table->integer('harga');
             $table->string('struk')->nullable();
             $table->enum('active', ['0', '1'])->nullable();
-            ('struk')->nullable();
             $table->timestamps();
         });
     }

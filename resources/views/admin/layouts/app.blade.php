@@ -123,6 +123,9 @@
             <a href="/list-history" class="list-group-item list-group-item-action waves-effect">
               <i class="fas fa-history mr-3"></i>Riwayat
             </a>
+            <a href="/list-message" class="list-group-item list-group-item-action waves-effect">
+              <i class="fas fa-envelope mr-3"></i>Message
+            </a>
         </div>
     </div>
   </header>

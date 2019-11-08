@@ -48,7 +48,8 @@ Route::group(['middleware' => ['auth', 'checkRole:admin']], function () {
     Route::get('/event/{slug}', 'DashboardController@showEvent');
     Route::post('/event/{id}/update', 'DashboardController@editEvent');
     Route::get('/event/{id}/destroy', 'DashboardController@eventDestroy');
-
+    Route::get('/list-message', 'DashboardController@message');
+    Route::get('/message/{id}/delete', 'DashboardController@messageDelete');
 });
 
 Route::get('/', 'HomeController@index');

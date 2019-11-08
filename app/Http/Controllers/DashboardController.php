@@ -9,6 +9,7 @@ use App\User;
 use App\Event;
 use App\Payment;
 use App\Booking;
+use App\Message;
 use App\History;
 use App\Gallery;
 use App\Lapangan;
@@ -306,5 +307,20 @@ class DashboardController extends Controller
         $event->delete();
 
         return redirect("/list-event")->with('success', 'Data event has deleted!!');
+    }
+
+    public function message()
+    {
+        $message = Message::orderBy('created_at', 'desc')->paginate(8);
+
+        return view('admin.message')->with('message', $message);
+    }
+
+    public function messageDelete($id)
+    {
+        $message = Message::find($id);
+        $message->delete();
+
+        return redirect("/list-message")->with('success', 'Data message has deleted!!');
     }
 }

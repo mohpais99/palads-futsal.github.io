@@ -67,7 +67,7 @@
             var id = $(this).attr('dataId');
             swal({
                 title: "Are you sure?",
-                text: "Once deleted, you will not be able to recover this data booking with ID "+id+"??",
+                text: "Once deleted, you will not be able to recover this data payment with ID "+id+"??",
                 icon: "warning",
                 buttons: true,
                 dangerMode: true,
