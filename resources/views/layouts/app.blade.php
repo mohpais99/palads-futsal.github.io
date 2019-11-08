@@ -73,7 +73,7 @@
                             </li>
                         @endif
                         <li class="nav-item">
-                            <a class="nav-link" href="">Member</a>
+                            <a class="nav-link" href="/member">Member</a>
                         </li>
                     @endguest
                 </ul>

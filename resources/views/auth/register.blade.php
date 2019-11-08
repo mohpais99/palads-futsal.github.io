@@ -70,12 +70,12 @@
                                     </div>
                                     <div class="md-form">
                                         <i class="fas fa-lock prefix white-text"></i>
-                                        <input type="password" name="password" class="form-control">
+                                        <input id="new_password" type="password" name="password" minlength="6" class="form-control">
                                         <label for="password">Your password</label>
                                     </div>
                                     <div class="md-form">
                                         <i class="fas fa-lock prefix white-text"></i>
-                                        <input type="password" name="re-password" class="form-control">
+                                        <input id="re_password" type="password" name="re-password" class="form-control">
                                         <label for="re-password">Re-type password</label>
                                     </div>
                                     <div class="text-center">
@@ -108,6 +108,20 @@
     <!-- Custom scripts -->
     <script>
     new WOW().init();
+    </script>
+
+    <script>     
+        var password = document.getElementById("new_password"),
+            confirm_password = document.getElementById("re_password");
+        function validatePassword(){
+            if(password.value != confirm_password.value) {
+                confirm_password.setCustomValidity("Passwords Don't Match");
+            } else {
+                confirm_password.setCustomValidity('');
+            }
+        }
+        password.onchange = validatePassword;
+        confirm_password.onkeyup = validatePassword;
     </script>
 
 </body>

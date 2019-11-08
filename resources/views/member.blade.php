@@ -42,10 +42,6 @@
                             <li class="list-group-item">3. Bebas parkir kendaraan</li>
                             <li class="list-group-item">4. Gratis 1 botol air minum berukuran 1 setengan liter</li>
                         </ul>
-                        
-                        <!-- CTA -->
-                        <a href="" class="btn rgba-gradient text-white btn-md">Booking !!
-                        <i class="far fa-calendar-alt"></i>
                         </a>
                     </div>
                 </div>
