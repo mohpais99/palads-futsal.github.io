@@ -165,7 +165,7 @@ class DashboardController extends Controller
             $booking_U->status = 'Incoming';
             $booking_U->save();
 
-            return redirect()->route('payment')->with('success', 'Data Updated !!!');
+            return redirect()->route('booking')->with('success', 'Data Updated !!!');
         }
         return redirect()->back()->with('error', 'Tidak ada data masuk');
     }
