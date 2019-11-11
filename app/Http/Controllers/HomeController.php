@@ -133,6 +133,10 @@ class HomeController extends Controller
         $payment->active = '0';
         $payment->save();
 
+        $booking = Booking::where('id', '=', $payment->booking_id)->first();
+        $booking->status = 'Waiting';
+        $booking->save();
+
         return redirect('/payment')->with('success', 'Data Uploaded Successfully!! Terima Kasih telah menyewa tempat kami!!');
     }
 

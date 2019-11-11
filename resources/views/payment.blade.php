@@ -31,13 +31,19 @@
                 background: #1C2331!important;
             }
         }
+
+        @media (min-width: 900px) and (max-width: 1400px) {
+            .form {
+                margin-top: 100px;
+            }
+        }
     </style>
 @stop
 
 @section('content')
     <div class="view full-page-intro" style="background-image: url('img/bg4.jpg'); background-repeat: no-repeat; background-size: cover;">
         <div class="mask rgba-gradient d-flex justify-content-center align-items-center">
-            <div class="container">
+            <div class="container form">
                 <div class="row wow fadeIn">
                     <div class="col-md-6 mb-4 white-text text-center text-md-left">
                         <h1 class="display-4 font-weight-bold">Count Down</h1>

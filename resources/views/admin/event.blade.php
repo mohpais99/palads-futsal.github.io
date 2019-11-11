@@ -4,7 +4,7 @@
     <style>
         .cont .btn-warning {
             position: absolute;
-            top: 50%;
+            top: 45%;
             left: 10%;
             transform: translate(-50%, -50%);
             -ms-transform: translate(-50%, -50%);
@@ -12,7 +12,7 @@
 
         .myImg {
             width: 100%;
-            height: 350px !important;
+            height: 280px !important;
         }
 
         .cont .btn-danger {

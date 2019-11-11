@@ -45,7 +45,7 @@
                                 <td>{{ date("d F Y", strtotime($item->tanggal_main))}}</td>
                                 <td>{{ date("H:i A", strtotime($item->waktu_mulai))}}</td>
                                 <td>{{ date("H:i A", strtotime($item->waktu_akhir))}}</td>
-                                <td>{{$item->status}}<span id="timer"></span></td>
+                                <td>{{$item->status}}</span></td>
                                 <td>
 
                                     <a id="catchId" dataId="{{$item->id}}" class="btn btn-danger btn-sm">

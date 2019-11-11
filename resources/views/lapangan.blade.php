@@ -37,18 +37,6 @@
                         <p>Tersedia Lapangan sistesis, jaring penghalang, papan skor otomatis, dan tempat duduk untuk para penonton!</p>
                         <div class="col">
                             <div class="row">
-                                {{-- @foreach ($jam as $item)
-                                    @if ($booking)    
-                                        @foreach ($booking as $look)
-                                            @if ($item->time == $look->waktu_mulai)
-                                                <h5 class="m-2"><span class="p-2 badge @if ($item->time == $look->waktu_mulai) badge-danger @else badge-success @endif">{{$item->name}}</span></h5>
-                                            @endif
-                                        @endforeach
-                                        @if ($item->time <> $look->waktu_mulai)
-                                            <h5 class="m-2"><span class="p-2 badge badge-success">{{$item->name}}</span></h5>
-                                        @endif
-                                    @endif
-                                @endforeach --}}
                                 @if ($booking != null)
                                     @foreach ($jam as $item)
                                         <h5 class="m-2"><span class="p-2 badge badge-danger">{{$item->name}}</span></h5>

@@ -32,7 +32,7 @@ class DashboardController extends Controller
 
     public function user()
     {
-        $user = User::orderBy('created_at', 'desc')->paginate(5);
+        $user = User::where('role', '=', 'user')->orderBy('created_at', 'desc')->paginate(5);
 
         return view('admin.user')->with('user', $user);
     }
@@ -41,7 +41,7 @@ class DashboardController extends Controller
     {
         $cari = $request->search;
         
-        $user = User::where('name','like',"%".$cari."%")->paginate(5);
+        $user = User::where('role', '=', 'user')->where('name','like',"%".$cari."%")->paginate(5);
             
         return view('admin.user', compact('user'));
     }

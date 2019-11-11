@@ -52,7 +52,7 @@ class User extends Authenticatable
     public function getpay()
     {
         if (!empty($this->booking->payment)) {
-            $booking = Booking::where(['status' => 'Unpaid'])
+            $booking = Booking::where(['status' => 'Waiting'])
                                 ->where(['user_id'=> $this->id])
                                 ->first();
             $getPay = Payment::where('booking_id', $booking->id)
