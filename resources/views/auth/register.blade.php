@@ -60,22 +60,22 @@
                                     {{csrf_field()}}
                                     <div class="md-form">
                                         <i class="fas fa-user prefix white-text"></i>
-                                        <input type="text" name="name" class="form-control">
+                                        <input type="text" name="name" class="form-control" required>
                                         <label for="name">Your name</label>
                                     </div>
                                     <div class="md-form">
                                         <i class="fas fa-envelope prefix white-text"></i>
-                                        <input type="text" name="email" class="form-control">
+                                        <input type="text" name="email" class="form-control" required>
                                         <label for="email">Your email</label>
                                     </div>
                                     <div class="md-form">
                                         <i class="fas fa-lock prefix white-text"></i>
-                                        <input id="new_password" type="password" name="password" minlength="6" class="form-control">
+                                        <input id="new_password" type="password" name="password" minlength="6" class="form-control" required>
                                         <label for="password">Your password</label>
                                     </div>
                                     <div class="md-form">
                                         <i class="fas fa-lock prefix white-text"></i>
-                                        <input id="re_password" type="password" name="re-password" class="form-control">
+                                        <input id="re_password" type="password" name="re-password" class="form-control" required>
                                         <label for="re-password">Re-type password</label>
                                     </div>
                                     <div class="text-center">
