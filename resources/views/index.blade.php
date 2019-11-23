@@ -46,7 +46,7 @@
 
             <hr class="my-5">
             <section id="contact">
-                <h2 class="mb-5 font-weight-bold text-center">Contact us</h2>
+                <h2 class="mb-5 font-weight-bold text-center">Contact Us</h2>
                 <div class="row">
                     <div class="col-lg-5 col-md-12">
                         <form class="p-5 grey-text" action="/message" method="POST">
