@@ -29,6 +29,10 @@ Route::group(['middleware' => ['auth', 'checkRole:admin']], function () {
     Route::get('/user/{id}/update', 'DashboardController@userUpdate');
     Route::get('/user/{id}/delete', 'DashboardController@userDelete');
     Route::get('/list-lapangan', 'DashboardController@lapangan');
+    Route::post('/lapangan/store', 'DashboardController@lapanganStore');
+    Route::get('/lapangan/{slug}', 'DashboardController@lapanganEdit');
+    Route::post('/lapangan/{id}/update', 'DashboardController@lapanganUpdate');
+    Route::get('/lapangan/{id}/destroy', 'DashboardController@lapanganDestroy');
     Route::get('/list-booking', 'DashboardController@booking')->name('booking');
     Route::get('/find-booking', 'DashboardController@cariBooking');
     Route::get('/list-payment', 'DashboardController@pembayaran')->name('payment');

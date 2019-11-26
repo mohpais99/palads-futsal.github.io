@@ -36,7 +36,7 @@
                             <h3 class="mb-3 font-weight-bold dark-grey-text">
                                 <strong>{{$item->nama}}</strong>
                             </h3>
-                            <p class="grey-text">Sintesis, Beton, Tempat Duduk Penonton</p>
+                            <p class="grey-text">{{$item->deskripsi}}</p>
                             <a href="/home/{{$item->slug}}" class="btn btn-primary btn-md">Lihat Lapangan
                             </a>
                         </div>

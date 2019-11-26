@@ -8,6 +8,12 @@
                 <span>/</span>
                 <span>Lapangan</span>
             </h4>
+
+            <div class="d-flex justify-content-center">
+                <button class="btn btn-primary btn-sm my-0 p" type="submit" data-toggle="modal" data-target="#modalLRFormDemo">
+                    <i class="fas fa-plus"></i>
+                </button>
+            </div>
         </div>
     </div>
 
@@ -35,10 +41,10 @@
                                 <th style="width:5px !impormant">{{$no++}}</th>
                                 <td colspan="2" class="align-middle"><img src="/img/lapangan/{{$item->foto}}" alt="Lapangan" style="width: 200px; height:140px"></td>
                                 <td>{{$item->nama}}</td>
-                                <td>Rumput Sintesis, beton</td>
+                                <td>{{$item->deskripsi}}</td>
                                 <td>
-                                    <a href="" class="btn btn-warning btn-sm"><i class="far fa-eye"></i></a>
-                                    <a href="" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></i></a>
+                                    <a href="/lapangan/{{$item->slug}}" class="btn btn-warning btn-sm"><i class="far fa-eye"></i></a>
+                                    <a class="btn btn-danger btn-sm" id="catchId" dataId="{{$item->id}}"><i class="fas fa-trash-alt"></i></i></a>
                                 </td>
                             </tr>
                             @endforeach
@@ -48,8 +54,28 @@
             </div>
         </div>
     </div>
+    @include('admin.inc.addLapangan')
 @stop
 
 @section('js')
-    
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>
+        $('#catchId[dataId]').click(function() {
+            var id = $(this).attr('dataId');
+            swal({
+                title: "Are you sure?",
+                text: "Once deleted, you will not be able to recover this data booking with ID "+id+"??",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            })
+            .then((willDelete) => {
+                if (willDelete) {
+                    window.location = "/lapangan/"+id+"/destroy"
+                } else {
+                    swal("Deleted data canceled!!");
+                }
+            });
+        })
+    </script>
 @endsection

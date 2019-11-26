@@ -82,12 +82,59 @@ class DashboardController extends Controller
         return view('admin.lapangan', compact('lapangan'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+    public function lapanganStore(Request $request)
+    {
+        $lapangan = new Lapangan;
+        $lapangan->nama = $request->nama;
+        $lapangan->slug = Str::slug($request->nama);
+        $lapangan->deskripsi = $request->deskripsi;
+        if ($request->hasFile('foto')) {
+            $file = $request->file('foto');
+            $fileName = time().'.'.$file->getClientOriginalExtension();
+            $destinationPath = public_path('img/lapangan/');
+            $file->move($destinationPath, $fileName);
+            $lapangan->foto = $fileName;
+        }
+        $lapangan->save();
+
+        return redirect("/list-lapangan")->with('success', 'Data lapangan has included!!');
+    }
+
+    public function lapanganEdit($slug)
+    {
+        $lapangan = Lapangan::where('slug', $slug)->first();
+        return view('admin.inc.editLapangan', compact('lapangan'));
+    }
+
+    public function lapanganUpdate($id, Request $request)
+    {
+        $lapangan = Lapangan::find($id);
+        $lapangan->nama = $request->nama;
+        $lapangan->slug = Str::slug($request->nama);
+        $lapangan->deskripsi = $request->deskripsi;
+        if ($request->hasFile('foto')) {
+            $file = $request->file('foto');
+            $fileName = time().'.'.$file->getClientOriginalExtension();
+            $destinationPath = public_path('img/lapangan/');
+            $file->move($destinationPath, $fileName);
+            $lapangan->foto = $fileName;
+        }
+        $lapangan->save();
+
+        return redirect("/list-lapangan")->with('success', 'Data lapangan has updated!!');
+    }
+
+    public function lapanganDestroy($id)
+    {
+        $lapangan = Lapangan::find($id);
+        if (file_exists("img/lapangan/$lapangan->foto")) {
+            unlink("img/lapangan/$lapangan->foto");
+        }
+        $lapangan->delete();
+
+        return redirect()->back()->with('success', 'Data Deleted Successfully !!!');
+    }
+
     public function booking()
     {
         $booking = Booking::orderBy('created_at', 'desc')->paginate(5);

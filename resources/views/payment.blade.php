@@ -86,7 +86,7 @@
                                     <label for="form8">Tanggal Main</label>
                                 </div>                                
                                 <div class="md-form">
-                                    <i class="fab fa-paypal prefix grey-text"></i>
+                                    <i class="fas fa-credit-card prefix grey-text"></i>
                                     <input type="text" class="form-control" value="Rp {{number_format($payment->harga)}}" readonly>
                                     <label for="form8">Jumlah Pembayaran</label>
                                 </div>
@@ -95,6 +95,10 @@
                                     <input type="text" class="form-control" value="{{$booking->lapangan->nama}}" readonly>
                                     <label for="form8">Lapangan</label>
                                     <img src="img/lapangan/{{$booking->lapangan->foto}}" alt="thumbnail" class="img-thumbnail ml-4" style="width: 200px">
+                                </div>
+                                <div class="md-form">
+                                    <i class="fab fa-paypal prefix grey-text"></i>
+                                    <input class="form-control" value="BCA - 6827-4492-231" readonly>
                                 </div>
                             </div>
                         </div>
