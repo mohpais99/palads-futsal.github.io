@@ -60,12 +60,12 @@
                                     {{csrf_field()}}
                                     <div class="md-form">
                                         <i class="fas fa-user prefix white-text"></i>
-                                        <input type="text" name="name" class="form-control">
+                                        <input type="text" name="name" class="form-control" required>
                                         <label for="name">Your name</label>
                                     </div>
                                     <div class="md-form">
                                         <i class="fas fa-envelope prefix white-text"></i>
-                                        <input type="text" name="email" class="form-control">
+                                        <input type="text" name="email" class="form-control" required>
                                         <label for="email">Your email</label>
                                     </div>
                                     <div class="md-form">
