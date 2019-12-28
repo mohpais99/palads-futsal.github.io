@@ -34,7 +34,8 @@
                             <span>Rp 65.000 / jam</span>
                         </p>
                         <p class="lead font-weight-bold">Deskripsi</p>
-                        <p>Tersedia Lapangan sistesis, jaring penghalang, papan skor otomatis, dan tempat duduk untuk para penonton!</p>
+                        {{-- <p>Tersedia Lapangan sistesis, jaring penghalang, papan skor otomatis, dan tempat duduk untuk para penonton!</p> --}}
+                        <p>{{$lapangan->deskripsi}}</p>
                         <div class="col">
                             <div class="row">
                                 @if ($booking != null)

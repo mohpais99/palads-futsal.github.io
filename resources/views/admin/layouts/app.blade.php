@@ -53,7 +53,6 @@
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item dropdown">
                         <a class="nav-link waves-effect dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Data</a>
-
                         <div class="dropdown-menu dropdown-secondary">
                           <a class="dropdown-item" href="/list-lapangan">Data Lapangan</a>
                           <a class="dropdown-item" href="/list-booking">Data Booking</a>
@@ -62,7 +61,6 @@
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link waves-effect dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Media</a>
-
                         <div class="dropdown-menu dropdown-secondary">
                           <a class="dropdown-item" href="/list-gallery">Gallery</a>
                           <a class="dropdown-item" href="/list-event">Event</a>
@@ -160,7 +158,7 @@
 
     <div class="footer-copyright py-3">
       © 2019 Copyright:
-      <a href="#"> palad-futsal.com </a>
+      <a href="/"> palad-futsal.com </a>
     </div>
     <!--/.Copyright-->
 

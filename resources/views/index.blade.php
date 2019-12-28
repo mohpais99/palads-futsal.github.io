@@ -36,7 +36,7 @@
                             <h3 class="mb-3 font-weight-bold dark-grey-text">
                                 <strong>{{$item->nama}}</strong>
                             </h3>
-                            <p class="grey-text">Sintesis, Beton, Tempat Duduk Penonton</p>
+                            <p class="grey-text">{{$item->deskripsi}}</p>
                             <a href="/home/{{$item->slug}}" class="btn btn-primary btn-md">Lihat Lapangan
                             </a>
                         </div>
@@ -46,7 +46,7 @@
 
             <hr class="my-5">
             <section id="contact">
-                <h2 class="mb-5 font-weight-bold text-center">Contact us</h2>
+                <h2 class="mb-5 font-weight-bold text-center">Contact Us</h2>
                 <div class="row">
                     <div class="col-lg-5 col-md-12">
                         <form class="p-5 grey-text" action="/message" method="POST">
